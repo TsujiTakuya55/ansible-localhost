@@ -1,0 +1,59 @@
+- hosts: localhost
+  connection: local
+
+  vars:
+    homebrew_taps:
+      - caskroom/cask
+      - caskroom/versions
+      - homebrew/dupes
+      - homebrew/versions
+      - homebrew/boneyard
+      - homebrew/binary
+
+    homebrew_cask_packages:
+      - name: appcleaner
+      - name: google-chrome
+      - name: slack
+      - name: mysqlworkbench
+      - name: goland
+      - name: sourcetree
+      - name: docker
+
+    homebrew_packages:
+      - name: git
+      - name: zsh
+      - name: zplug
+      - name: docker
+
+  tasks:
+    - name: homebrew update
+      homebrew:
+        update_homebrew: yes
+
+    - name: homebrew tap
+      homebrew_tap:
+        name: '{{ item }}'
+        state: present
+      with_items: '{{ homebrew_taps }}'
+
+    - name: homebrew cask packages install
+      homebrew_cask: name={{ item.name }} state=installed
+      # ※1 GUIツールをインストールする場所を `/Application` に固定
+      environment:
+        HOMEBREW_CASK_OPTS: "--appdir=/Applications"
+      with_items: '{{ homebrew_cask_packages }}'
+
+    - name: homebrew packages install
+      homebrew:
+        name: '{{ item.name }}'
+        state: '{{ item.state | default("present") }}'
+      with_items: '{{ homebrew_packages }}'
+
+    - name: dotfiles install
+      shell: bash -c "$(curl -L raw.github.com/TsujiTakuya55/dotfiles/master/install.sh)" -s install
+
+    # 最新Verをすぐ使いたいのでbrewでは管理せず直接gitからダウンロード
+    - name: goenv install
+      shell: |
+        git clone https://github.com/syndbg/goenv.git ~/.goenv
+

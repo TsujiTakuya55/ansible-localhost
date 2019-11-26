@@ -1,3 +1,5 @@
+# ansible-localhost
+
 ## Install
 ```bash
 bash -c "$(curl -L )" -s install
@@ -16,5 +18,4 @@ bash -c "$(curl -L raw.github.com/TsujiTakuya55/dotfiles/master/install.sh)" -s 
 
 ## dry run
 ansible-playbook -i hosts packages.yml -vvv --check
-# ansible-localhost
-# ansible-localhost
+
