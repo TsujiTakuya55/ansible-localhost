@@ -74,7 +74,7 @@ download() {
 deploy() {
     echo "deploy"
 
-    ansible-playbook -i hosts packages.yml
+    ansible-playbook -i hosts "$PLAYBOOKPATH"/packages.yml
 }
 
 if [ "$1" = "deploy" -o "$1" = "d" ]; then
