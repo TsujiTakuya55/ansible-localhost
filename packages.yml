@@ -13,11 +13,14 @@
     homebrew_cask_packages:
       - name: appcleaner
       - name: google-chrome
+      - name: google-japanese-ime
       - name: slack
       - name: mysqlworkbench
       - name: goland
       - name: sourcetree
       - name: docker
+      - name: iterm2
+      - name: postman
 
     homebrew_packages:
       - name: git
