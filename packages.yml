@@ -53,7 +53,7 @@
       with_items: '{{ homebrew_packages }}'
 
     - name: dotfiles install
-      shell: bash -c "$(curl -L raw.github.com/TsujiTakuya55/dotfiles/master/install.sh)" -s install
+      shell: bash -c "$(curl -L raw.github.com/ttakuya50/dotfiles/master/install.sh)" -s install
 
     # 最新Verをすぐ使いたいのでbrewでは管理せず直接gitからダウンロード
     - name: goenv install
