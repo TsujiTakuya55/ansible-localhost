@@ -21,12 +21,15 @@
       - name: docker
       - name: iterm2
       - name: postman
+      - name: authy
 
     homebrew_packages:
       - name: git
       - name: zsh
       - name: zplug
       - name: docker
+      - name: jq
+      - name: bats
 
   tasks:
     - name: homebrew update
