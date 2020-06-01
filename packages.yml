@@ -30,6 +30,7 @@
       - name: docker
       - name: jq
       - name: bats
+      - name: nodebrew
 
   tasks:
     - name: homebrew update
@@ -63,3 +64,7 @@
       shell: |
         git clone https://github.com/syndbg/goenv.git ~/.goenv
 
+    - name: node,npm,npx install
+        shell: |
+          mkdir -p ~/.nodebrew/src
+          nodebrew install-binary latest
