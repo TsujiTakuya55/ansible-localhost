@@ -69,3 +69,19 @@
           mkdir -p ~/.nodebrew/src
           nodebrew install-binary latest
           nodebrew use v11.6.0
+
+    - name: Install cz-conventional-changelog-ja
+      npm:
+        name: cz-conventional-changelog-ja
+        global: yes
+
+    - name: Install yarn
+      npm:
+        name: yarn
+        state: present
+        global: yes
+
+    - name: Install clasp
+      npm:
+        name: google/clasp
+        global: yes
