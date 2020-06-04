@@ -68,3 +68,4 @@
         shell: |
           mkdir -p ~/.nodebrew/src
           nodebrew install-binary latest
+          nodebrew use v11.6.0
