@@ -18,6 +18,7 @@
       - name: mysqlworkbench
       - name: goland
       - name: sourcetree
+      - name: p4v
       - name: docker
       - name: iterm2
       - name: postman
