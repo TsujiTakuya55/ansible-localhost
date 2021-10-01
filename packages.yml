@@ -66,10 +66,10 @@
         git clone https://github.com/syndbg/goenv.git ~/.goenv
 
     - name: node,npm,npx install
-        shell: |
-          mkdir -p ~/.nodebrew/src
-          nodebrew install-binary latest
-          nodebrew use v11.6.0
+      shell: |
+        mkdir -p ~/.nodebrew/src
+        nodebrew install-binary latest
+        nodebrew use v11.6.0
 
     - name: Install cz-conventional-changelog-ja
       npm:
