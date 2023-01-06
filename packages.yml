@@ -16,8 +16,8 @@
       - name: google-japanese-ime
       - name: slack
       - name: mysqlworkbench
-      - name: goland
-      - name: sourcetree
+      - name: jetbrains-toolbox
+      - name: fork
       - name: p4v
       - name: docker
       - name: iterm2
@@ -30,7 +30,6 @@
       - name: zplug
       - name: docker
       - name: jq
-      - name: bats
       - name: nodebrew
 
   tasks:
