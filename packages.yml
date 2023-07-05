@@ -23,6 +23,9 @@
       - name: iterm2
       - name: postman
       - name: authy
+      - name: clipy
+      - name: wrike
+      - name: kindle
 
     homebrew_packages:
       - name: git
@@ -31,6 +34,7 @@
       - name: docker
       - name: jq
       - name: nodebrew
+      - name: anyenv
 
   tasks:
     - name: homebrew update
@@ -59,26 +63,9 @@
     - name: dotfiles install
       shell: bash -c "$(curl -L raw.github.com/ttakuya50/dotfiles/master/install.sh)" -s install
 
-    # 最新Verをすぐ使いたいのでbrewでは管理せず直接gitからダウンロード
-    - name: goenv install
-      shell: |
-        git clone https://github.com/syndbg/goenv.git ~/.goenv
-
-    - name: node,npm,npx install
-      shell: |
-        mkdir -p ~/.nodebrew/src
-        nodebrew install-binary latest
-        nodebrew use v11.6.0
-
     - name: Install cz-conventional-changelog-ja
       npm:
         name: cz-conventional-changelog-ja
-        global: yes
-
-    - name: Install yarn
-      npm:
-        name: yarn
-        state: present
         global: yes
 
     - name: Install clasp
